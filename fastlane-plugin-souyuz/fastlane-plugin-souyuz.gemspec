@@ -1,6 +1,6 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fastlane/plugin/souyuz/version'
+require 'fastlane/plugin/souyuz-ventaapps/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-souyuz-ventaapps'
