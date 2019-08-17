@@ -29,6 +29,7 @@ module Souyuz
         options << config[:extra_build_options] if config[:extra_build_options]
         options << "/p:Platform=#{config[:build_platform]}" if Souyuz.project.ios? and config[:build_platform]
         options << "/p:BuildIpa=true" if Souyuz.project.ios?
+        options << "/p:AndroidPackageFormat=aab" if config[:is_aab]?
         if config[:solution_path]
           solution_dir = File.dirname(config[:solution_path])
           options << "/p:SolutionDir=#{solution_dir}/"
