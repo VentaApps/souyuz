@@ -13,7 +13,10 @@ module Souyuz
 
         path
       elsif Souyuz.project.android?
-        path = apk_file
+        if config[:is_aab]
+          path = aab_file
+        else
+          path = apk_file  
         if config[:keystore_path] && config[:keystore_alias]
           UI.success "Jar it, sign it, zip it..."
 
@@ -42,6 +45,15 @@ module Souyuz
       Souyuz.cache[:build_apk_path] = "#{build_path}/#{assembly_name}.apk"
 
       "#{build_path}/#{assembly_name}.apk"
+    end
+
+    def aab_file
+      build_path = Souyuz.project.options[:output_path]
+      assembly_name = Souyuz.project.options[:assembly_name]
+
+      Souyuz.cache[:build_apk_path] = "#{build_path}/#{assembly_name}.aab"
+
+      "#{build_path}/#{assembly_name}.aab"
     end
 
     def jarsign_and_zipalign

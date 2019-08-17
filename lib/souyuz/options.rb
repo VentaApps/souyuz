@@ -78,6 +78,12 @@ module Souyuz
                                      default_value: 'http://timestamp.digicert.com',
                                      env_name: "SOUYUZ_ANDROID_KEYSTORE_TSA",
                                      description: "TSA for jarsigner",
+                                     optional: true),
+        FastlaneCore::ConfigItem.new(key: :is_aab,
+                                     env_name: "SOUYUZ_AAB",
+                                     description: "Flag to indicate that generating AAB",
+                                     default_value: false,
+                                     is_string: false,
                                      optional: true)
       ]
     end
