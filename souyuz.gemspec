@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "souyuz/version"
 
 Gem::Specification.new do |s|
-  s.name        = 'souyuz-ventaapps'
+  s.name        = 'souyuz'
   s.version     = Souyuz::VERSION
   s.summary     = Souyuz::DESCRIPTION
   s.description = Souyuz::DESCRIPTION
   s.authors     = ["Felix Rudat"]
   s.email       = 'voydz@hotmail.com'
-  s.homepage    = 'https://github.com/VentaApps/souyuz'
+  s.homepage    = 'https://github.com/voydz/souyuz'
   s.license     = 'MIT'
 
   s.required_ruby_version = ">= 2.2.0"
